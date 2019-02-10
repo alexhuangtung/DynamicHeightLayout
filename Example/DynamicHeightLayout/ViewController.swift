@@ -7,18 +7,71 @@
 //
 
 import UIKit
+import DynamicHeightLayout
 
 class ViewController: UIViewController {
-
+    
+    let colors: [UIColor] = [
+        UIColor(red: 0.8, green: 1.0, blue: 1.0, alpha: 1),
+        UIColor(red: 1.0, green: 0.8, blue: 1.0, alpha: 1),
+        UIColor(red: 1.0, green: 1.0, blue: 0.8, alpha: 1),
+        UIColor(red: 0.8, green: 0.8, blue: 1.0, alpha: 1),
+        UIColor(red: 0.8, green: 1.0, blue: 0.8, alpha: 1),
+        UIColor(red: 1.0, green: 0.8, blue: 0.8, alpha: 1)
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let layout = DynamicHeightLayout(delegate: self)
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.register(LabelCell.self, forCellWithReuseIdentifier: "Cell")
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(cv)
+        cv.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        cv.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        cv.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        cv.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        cv.dataSource = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
 }
 
+extension ViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 100
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! LabelCell
+        cell.label.text = "\(indexPath.item + 1)"
+        cell.backgroundColor = colors[indexPath.item % colors.count]
+        return cell
+    }
+    
+}
+
+extension ViewController: DynamicHeightLayoutDelegate {
+    
+    func numberOfColumnsForSection(at section: Int) -> Int {
+        return 3
+    }
+    
+    func lineSpacingForSection(at section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func interitemSpacingForSection(at section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func insetForSection(at section: Int) -> UIEdgeInsets {
+        return .zero
+    }
+    
+    func heightForItem(at indexPath: IndexPath, itemWidth: CGFloat) -> CGFloat {
+        return CGFloat(arc4random_uniform(200) + 50)
+    }
+    
+    
+}

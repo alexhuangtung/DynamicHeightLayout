@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		E95BE122ECDBDAFC253D662A /* Pods_DynamicHeightLayout_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DDB37C29CAFEC83B1ED0117 /* Pods_DynamicHeightLayout_Tests.framework */; };
+		FAE879BB22106D910074AC03 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE879BA22106D910074AC03 /* LabelCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		191A2790449488EFD8EC232E /* Pods-DynamicHeightLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicHeightLayout_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicHeightLayout_Example/Pods-DynamicHeightLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
-		51E93D5088E1F60BDF162AC5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		51E93D5088E1F60BDF162AC5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		58B93FB115DF808A9D7A0677 /* Pods-DynamicHeightLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicHeightLayout_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicHeightLayout_Tests/Pods-DynamicHeightLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* DynamicHeightLayout_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicHeightLayout_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,9 +44,10 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		636901BE9A3F76E739A6A776 /* Pods-DynamicHeightLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicHeightLayout_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicHeightLayout_Tests/Pods-DynamicHeightLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DDB37C29CAFEC83B1ED0117 /* Pods_DynamicHeightLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicHeightLayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8E8B11B2FDC4FAA281B8882 /* DynamicHeightLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = DynamicHeightLayout.podspec; path = ../DynamicHeightLayout.podspec; sourceTree = "<group>"; };
+		A8E8B11B2FDC4FAA281B8882 /* DynamicHeightLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DynamicHeightLayout.podspec; path = ../DynamicHeightLayout.podspec; sourceTree = "<group>"; };
 		C8291ACF162338AFB98F5B59 /* Pods_DynamicHeightLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicHeightLayout_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F83B715BC8A8C9A09A66FD13 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F83B715BC8A8C9A09A66FD13 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FAE879BA22106D910074AC03 /* LabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		FC41878893CCF4FBAC73520F /* Pods-DynamicHeightLayout_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicHeightLayout_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicHeightLayout_Example/Pods-DynamicHeightLayout_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				FAE879BA22106D910074AC03 /* LabelCell.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -212,10 +215,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = FS5W7P78DN;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = FS5W7P78DN;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -335,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				FAE879BB22106D910074AC03 /* LabelCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +487,7 @@
 			baseConfigurationReference = FC41878893CCF4FBAC73520F /* Pods-DynamicHeightLayout_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FS5W7P78DN;
 				INFOPLIST_FILE = DynamicHeightLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -496,6 +503,7 @@
 			baseConfigurationReference = 191A2790449488EFD8EC232E /* Pods-DynamicHeightLayout_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FS5W7P78DN;
 				INFOPLIST_FILE = DynamicHeightLayout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -510,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 636901BE9A3F76E739A6A776 /* Pods-DynamicHeightLayout_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = FS5W7P78DN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -532,6 +541,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 58B93FB115DF808A9D7A0677 /* Pods-DynamicHeightLayout_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = FS5W7P78DN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

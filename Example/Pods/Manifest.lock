@@ -1,0 +1,16 @@
+PODS:
+  - DynamicHeightLayout (0.1.0)
+
+DEPENDENCIES:
+  - DynamicHeightLayout (from `../`)
+
+EXTERNAL SOURCES:
+  DynamicHeightLayout:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DynamicHeightLayout: f7db017aec5f34cd46ec1e8cf6e0994a428db92f
+
+PODFILE CHECKSUM: b9bb778437f6b442027c40a75fdde31c415902a1
+
+COCOAPODS: 1.5.3
