@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DynamicHeightLayout_Example' do
+  pod 'DynamicHeightLayout', :path => '../'
+
+  target 'DynamicHeightLayout_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
