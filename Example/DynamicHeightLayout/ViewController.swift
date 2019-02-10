@@ -11,7 +11,7 @@ import DynamicHeightLayout
 
 class ViewController: UIViewController {
     
-    let colors: [UIColor] = [
+    private let colors: [UIColor] = [
         UIColor(red: 0.8, green: 1.0, blue: 1.0, alpha: 1),
         UIColor(red: 1.0, green: 0.8, blue: 1.0, alpha: 1),
         UIColor(red: 1.0, green: 1.0, blue: 0.8, alpha: 1),
@@ -20,18 +20,22 @@ class ViewController: UIViewController {
         UIColor(red: 1.0, green: 0.8, blue: 0.8, alpha: 1)
     ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private lazy var collectionView: UICollectionView = {
         let layout = DynamicHeightLayout(delegate: self)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.register(LabelCell.self, forCellWithReuseIdentifier: "Cell")
         cv.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(cv)
-        cv.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        cv.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        cv.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        cv.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        cv.dataSource = self
+        return cv
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubview(collectionView)
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.dataSource = self
     }
     
 }
@@ -72,6 +76,5 @@ extension ViewController: DynamicHeightLayoutDelegate {
     func heightForItem(at indexPath: IndexPath, itemWidth: CGFloat) -> CGFloat {
         return CGFloat(arc4random_uniform(200) + 50)
     }
-    
     
 }
